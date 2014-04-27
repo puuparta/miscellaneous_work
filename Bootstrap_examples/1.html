@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- Varmistetaan toimiva renderöinti ja kosketusnäytön zoomaus asettamalla viewport. Zoom voidaan disabloida lisäämällä perään: , user-scalable=no -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- lokaalit tyylitiedostot -->
+    <!--<script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">-->
+    <!-- cdna tyylit palvelimelta-->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <!-- lisätty div col-classille väriä jotta demomielessä näkyy ruudulla -->
+    <style type="text/css">
+        [class*="col-"] {
+              padding-top: 15px;
+              padding-bottom: 15px;
+              background-color: #eee;
+              border: 1px solid #ddd;
+              background-color: rgba(86,61,124,.15);
+              border: 1px solid rgba(86,61,124,.2);
+            }
+    </style>
+</head>
+<body>
+    <h1>Bootstrap layout framework</h1>
+    <div class="alert alert-info"><strong>Responsiivinen grid layout oletuksena</strong> "mobile first"-periaate eli näytön pienentyessä layout muuttuu pinoksi</div>
+    <div class="alert alert-info"><strong>Esitellään myös ns. "responsiiviset aputyökalut"</strong> voidaan tyyliluokilla määrittää millä näyttökoolla ja medialla näytetään mitäkin</div>
+    
+    <hr>
+    <h3>container divillä <small> asettaa marginaalit</small></h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"><div class="visible-xs">Näkyy vain puhelinnäytöllä, koita suurentaa</div><div class="hidden-xs">Näkyy vain puhelimen näyttöjä suuremmilla, koita pienentää</div></div>
+            <div class="col-md-1">col-md-1</div>
+            <div class="col-md-1">col-md-1</div>
+            <div class="col-md-1"><div class="visible-print">Näkyy vain tulostettaessa</div><div class="hidden-print">ei näy tulostettaessa</div></div>
+            <div class="col-md-1">col-md-1</div>
+            <div class="col-md-1">col-md-1</div>
+            <div class="col-md-1">col-md-1</div>
+            <div class="col-md-1"><div class="visible-sm">Näkyy vain tableteilla, koita suurentaa tai pienentää</div><div class="hidden-sm">Näkyy muilla kuin tablettikokoisilla näytöillä, koita suurentaa tai pienentää</div></div>
+            <div class="col-md-1">col-md-1</div>
+            <div class="col-md-1">col-md-1</div>
+            <div class="col-md-1">col-md-1</div>
+            <div class="col-md-1">col-md-1</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">col-md-3</div>
+            <div class="col-md-4">col-md-4</div>
+            <div class="col-md-5">col-md-5</div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">col-md-5</div>
+            <div class="col-md-7">col-md-7</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">col-md-3</div>
+            <div class="col-md-7 col-md-offset-2">col-md-7 col-md-offset-2</div>
+        </div>
+        <div class="row">
+            <div class="col-md-12"><img class="img-responsive" src="http://www.grapevinetxonline.com/wp-content/uploads/2010/07/Thomas-the-Train-Grapevine-Texas.jpg"/></div>
+        </div>
+    </div>
+    <hr>
+
+    <!-- ilman containeria -->
+    <h3>ilman container diviä <small> ei aseta marginaaleja</small></h3>
+    <div class="row">
+        <div class="col-md-1">col-md-1</div>
+        <div class="col-md-1">col-md-1</div>
+        <div class="col-md-1">col-md-1</div>
+        <div class="col-md-1">col-md-1</div>
+        <div class="col-md-1">col-md-1</div>
+        <div class="col-md-1">col-md-1</div>
+        <div class="col-md-1">col-md-1</div>
+        <div class="col-md-1">col-md-1</div>
+        <div class="col-md-1">col-md-1</div>
+        <div class="col-md-1">col-md-1</div>
+        <div class="col-md-1">col-md-1</div>
+        <div class="col-md-1">col-md-1</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">col-md-3</div>
+        <div class="col-md-4">col-md-4</div>
+        <div class="col-md-5">col-md-5</div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">“This above all: to thine own self be true, And it must follow, as the night the day, Thou canst not then be false to any man.” </div>
+        <div class="col-md-7">col-md-7</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">col-md-3</div>
+        <div class="col-md-7 col-md-offset-2">col-md-7 col-md-offset-2</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"><img class="img-responsive" src="http://www.grapevinetxonline.com/wp-content/uploads/2010/07/Thomas-the-Train-Grapevine-Texas.jpg"/></div>
+    </div>
+
+    <!-- Loppuun table-esimerkki hoverilla -->
+    <h3>Hover-table</h3>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>#id</th>
+            <th>Nimi</th>
+            <th>Osoite</th>
+            <th>Vuokrarästit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Pekka Piippo</td>
+            <td>Turuntie 1</td>
+            <td>150e</td>
+          </tr>
+          <tr class="danger">
+            <td>2</td>
+            <td>Pekka Puupää</td>
+            <td>Maistraatinkatu 14 C 2</td>
+            <td>1260e</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Birgitta Nielsen</td>
+            <td>Valpuri Innamaankatu 2 A 19</td>
+            <td>980e</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td colspan="2">Lauri Lintula</td>
+            <td>1650e</td>
+          </tr>
+        </tbody>
+      </table>
+
+</body>
+</html>
