@@ -1,0 +1,25 @@
+@model Domain.Model.Kohde.Kohde
+
+@{
+    ViewBag.Title = "Muokkaa";
+}
+
+<h2>Muokkaa</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Kohde</legend>
+
+        @Html.HiddenFor(model => model.Id)
+		@Html.Partial("_CreateOrEdit", Model)
+
+        <p>
+            <input type="submit" value="Tallenna" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Kohdelista")
+</div>

@@ -1,0 +1,35 @@
+@model IEnumerable<Domain.Model.Kohde.Kohde>
+
+@{
+    ViewBag.Title = "Kohdelista";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Lis‰‰ kohde", "Uusi")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Osoite
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Muokkaa", "Muokkaa", new { id=item.Id }) |
+            @Html.ActionLink("Kohteen tiedot", "Tiedot", new { id=item.Id }) |
+            @Html.ActionLink("Poista", "Poista", new { id=item.Id })
+        </td>
+        <td>
+			@item.Osoite
+        </td>
+    </tr>
+}
+
+</table>
+
+

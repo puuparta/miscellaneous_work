@@ -1,0 +1,20 @@
+@model Domain.Model.Kohde.Kohde
+
+@{
+    ViewBag.Title = "Tiedot";
+}
+
+<h2>Kohdekortti</h2>
+
+<fieldset>
+    <legend>Kohde</legend>
+
+    <div class="display-label">Osoite</div>
+    <div class="display-field">@Model.Osoite</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Muokkaa", "Muokkaa", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Kohdelista")
+</p>
+
+

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain"
+                   namespace="Domain.Notification">
+  <class name="Notification">
+    <id name="Id">
+      <generator class="native" />
+    </id>
+    <property name="FirstName" />
+
+
+    <bag name="NotificationFields" table="'NotificationField'">
+      <key column="NotificationId"></key>
+      <one-to-many class="NotificationField"></one-to-many>
+    </bag>
+  </class>
+
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+@model Domain.Model.Kohde.Kohde
+
+@{
+    ViewBag.Title = "Poista";
+}
+
+<h2>Poista</h2>
+
+<h3>Haluatko varmasti poistaa kohteen?</h3>
+<fieldset>
+    <legend>Kohde</legend>
+
+    <div class="display-label">Osoite</div>
+    <div class="display-field">@Model.Osoite</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Poista" /> |
+        @Html.ActionLink("Back to List", "Kohdelista")
+    </p>
+}
+
+
